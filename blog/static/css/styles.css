@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto|Open+Sans:200italic,300italic,200,300,500);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:200,300,500);
+.hero__title {
+  display: flex;
+  justify-content: center; }
+
+.post-body {
+  display: block;
+  margin: 0 auto;
+  width: 50%; }
+
+.post__header {
+  margin-bottom: 40px; }
+
+.header__title {
+  display: flex;
+  justify-content: center; }
+
+.header__date {
+  display: flex;
+  justify-content: center; }
+
+a,
+p {
+  font-family: "Roboto", serif;
+  line-height: 1.4; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: normal; }
+
+h1 {
+  font-size: 4rem; }
+
+h2 {
+  font-size: 2.5rem; }
+
+h3 {
+  font-size: 2rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+a,
+p {
+  font-size: 1rem; }

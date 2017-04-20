@@ -1,0 +1,27 @@
+.hero {
+}
+
+.hero__title {
+    display: flex;
+    justify-content: center; 
+}
+
+.post-body {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.post__header {
+    margin-bottom: $margin-normal;
+}
+
+.header__title {
+    display: flex;
+    justify-content: center;
+}
+
+.header__date {
+    display: flex;
+    justify-content: center;
+}

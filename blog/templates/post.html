@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<header class="hero">
+		<h1 class="hero__title">Castaway Your Worries</h1>
+	</header>
+	<article>
+		<header class="post__header">
+			<h2 class="header__title">{{post.title}}</h2>
+			<p class="header__date">
+				<time datetime="{{post.created|date:"c"}}">
+					{{post.created|date}}
+				</time>
+			</p>
+		</header>
+		<div class="post-body">
+			{{post.content|safe}}
+		</div>
+	</article>
+{% endblock %}
