@@ -1,19 +1,24 @@
 {% extends 'base.html' %}
 
-{% block title %} Blog Archive {% endblock %}
+{% block title %}Cast Away Your Worries{% endblock %}
 
 {% block content %}
-    <h1> My Blog Archive </h1>
-    {% for post in posts %}
-        <div class="post">
-            <h2>
-                <a href="{{post.get_absolute_url}}">{{post.title}}</a>
-            </h2>
-            <p>{{post.description}}</p>
-            <p>
-                Posted on
-                <time datetime="{{post.created|date:"c"}}">{{post.created|date}}</time>
-            </p>
-        </div>
-    {% endfor %}
+    <div class="hero"> 
+        <h1 class="hero__headline">Cast Away Your Worries</h1>
+        <img src="/static/img/hero.png" alt="Castaway your worries" class="hero__image">
+    </div>
+    <div class="container">
+        {% for post in posts %}
+            <a href="{{post.get_absolute_url}}">
+                <div class="post {% cycle 'left' 'right' %}">
+                    <img class="post__image" src="/static/img/gridtest-2.png" alt="{{post.title}}">
+                    <h2 class="post__title">{{post.title}}</h2>
+                    <p class="post__date" datetime="{{post.created|date:"M"}}">{{post.created|date}}</p>
+                    <div class="post__curtain">
+                    </div>
+                    <p class="post__description">{{post.description}}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 {% endblock %}
