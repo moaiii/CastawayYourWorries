@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
 
@@ -12,9 +12,7 @@ class Post(models.Model):
     published = models.BooleanField(default=True)
     created = models.DateTimeField(db_index=True, auto_now_add=True)
     location = models.CharField(max_length=255)
-    # hero_image = models.ImageField()
-    # image_one = models.ImageField()
-    # image_one_caption = models.TextField()
+    hero_image = models.FileField(null=True, blank=True)
 
     def get_absolute_url(self):
         return reverse('post', args=[self.slug])

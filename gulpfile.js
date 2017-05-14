@@ -5,28 +5,29 @@ var concat = require('gulp-concat');
 
 
 gulp.task('sass', function() {
-  return gulp.src('./blog/static/sass/styles.scss')
+  return gulp.src('./static/sass/styles.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./blog/static/css'));
+    .pipe(gulp.dest('./static/css'));
 });
  
 gulp.task('sass:watch', function() {
-  gulp.watch('./blog/static/sass/*.scss', ['sass']);
+  gulp.watch('./static/sass/*.scss', ['sass']);
 });
 
 gulp.task('js-concat', function() {
   return gulp.src([
-      './blog/static/js/modules/base.js', 
-      './blog/static/js/modules/scrollevent.js', 
-      './blog/static/js/modules/animations.js',
-      './blog/static/js/modules/init.js' 
+      './static/js/modules/base.js', 
+      './static/js/modules/about.js',
+      './static/js/modules/scrollevent.js', 
+      './static/js/modules/animations.js',
+      './static/js/modules/init.js' 
     ])
     .pipe(concat('app.js'))
-    .pipe(gulp.dest('./blog/static/js'));
+    .pipe(gulp.dest('./static/js'));
 })
 
 gulp.task('js:watch', function () {
-  gulp.watch('./blog/static/js/modules/*.js', ['js-concat']);
+  gulp.watch('./static/js/modules/*.js', ['js-concat']);
 });
 
 

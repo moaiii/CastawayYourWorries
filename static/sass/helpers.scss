@@ -1,0 +1,8 @@
+@mixin stagger-transition-delay($i, $initial-delay, $stagger-delay) {
+  @while $i > 0 {
+    &:nth-of-type(#{$i}) {
+      transition-delay: $initial-delay + $stagger-delay * $i
+    }
+    $i: $i - 1;
+  }
+}

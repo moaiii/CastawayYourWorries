@@ -1,0 +1,27 @@
+{% load svg %}
+
+<div class="footer">
+    <a class="footer__pane--wrapper" href="{{post.get_previous_post.get_absolute_url}}">
+        <div class="footer__pane footer__pane--previous">
+            <img src="{{post.get_previous_post.hero_image.url}}" 
+                 alt="{{post.get_previous_post.title}}" class="footer__image">
+            <div class="pane__text">
+                <h3>{{post.get_previous_post.title}}</h3>
+            </div>
+        </div>
+    </a>
+    <a class="footer__pane--wrapper" href="{{post.get_next_post.get_absolute_url}}">
+        <div class="footer__pane footer__pane--next">
+            <img src="{{post.get_next_post.hero_image.url}}" 
+                 alt="{{post.get_next_post.title}}" class="footer__image">
+            <div class="pane__text">
+                <h3>{{post.get_next_post.title}}</h3>
+            </div>
+        </div>
+    </a>
+    <a href="/" class="home-link">
+        <div class="home__container">
+            {% svg 'home' %}
+        </div>
+    </a>
+</div>

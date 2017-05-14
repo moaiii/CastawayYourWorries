@@ -5,6 +5,43 @@
 var Castaway = Castaway || {};
 
 /**** 
+ *  about.js 
+ */
+
+Castaway.About = (function($) {
+
+    var About = function() {
+        return $('.');
+    };
+
+    var aboutContainer = $('#js-nav-container');
+    var buttonOpen = $('#js-about-open');
+    var buttonClose = $('#js-nav-close');
+    var aboutHeader = $('.nav__headline--about');
+    var aboutText = $('.nav__text--about');
+
+    buttonOpen.on('click', function() {
+        aboutContainer.addClass('.is-active');
+        aboutHeader.addClass('.is-active');
+        aboutText.addClass('.is-active');
+        buttonClose.addClass('.is-active');
+    });
+
+     buttonClose.on('click', function() {
+        aboutContainer.removeClass('.is-active');
+        aboutHeader.removeClass('.is-active');
+        aboutText.removeClass('.is-active');
+        buttonClose.removeClass('.is-active');  
+    });
+
+    About.prototype = {
+        constructor: About,
+    };
+
+    return About;
+})(jQuery);
+
+/**** 
  *  ScrollEvent.js 
  */
 
@@ -120,7 +157,7 @@ Castaway.Hero = (function($){
  *  animations.js 
  */
 
-Castaway.Animations = (function($){
+Castaway.Animations = (function($) {
 
     var Animations = function() {
         return $('.');
@@ -139,10 +176,10 @@ Castaway.Animations = (function($){
      * thus animating the element
      */
     $(window).scroll(function() {
-        windowBottom = $(window).height() + $(window).scrollTop() - 500;
+        windowBottom = $(window).height() + $(window).scrollTop();
         
         animationElements.each(function(){
-            if(windowBottom > this.getBoundingClientRect().top) {
+            if(windowBottom > this.getBoundingClientRect().top + 500) {
                 $(this).addClass("is-active");
             }
         })
