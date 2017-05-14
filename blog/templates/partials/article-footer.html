@@ -6,18 +6,22 @@
             {% svg 'home' %}
         </div>
     </a>
-    <div class="footer__pane footer__pane--previous">
-        <img src="/static/img/footer.png" alt="Castaway your worries" class="footer__image">
-        <div class="pane__text">
-            <h3>Lipsum Ipsum</h3><br>
+    <a class="footer__pane--wrapper" href="{{post.get_previous_post.get_absolute_url}}">
+        <div class="footer__pane footer__pane--previous">
+            <img src="/static/img/footer.png" alt="{{post.get_previous_post.title}}" class="footer__image">
+            <div class="pane__text">
+                <h3>{{post.get_previous_post.title}}</h3>
+            </div>
         </div>
-    </div>
-    <div class="footer__pane footer__pane--next">
-        <img src="/static/img/footer.png" alt="Castaway your worries" class="footer__image">
-        <div class="pane__text">
-            <h3>Lipsum Ipsum</h3><br>
+    </a>
+    <a class="footer__pane--wrapper" href="{{post.get_next_post.get_absolute_url}}">
+        <div class="footer__pane footer__pane--next">
+            <img src="/static/img/footer.png" alt="{{post.get_next_post.title}}" class="footer__image">
+            <div class="pane__text">
+                <h3>{{post.get_next_post.title}}</h3>
+            </div>
         </div>
-    </div>
+    </a>
     <div class="disclaimer">
         <p class="disclaimer__text">
             All rights reserved - Tommy Collins

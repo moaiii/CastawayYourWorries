@@ -33,7 +33,6 @@ ALLOWED_HOSTS = [
 ]
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -75,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-STATIC_URL = '/blog/static/'
+STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "/blog/static")
 
@@ -91,7 +90,6 @@ DATABASES = {
         'NAME': 'castawayyourworries.db',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

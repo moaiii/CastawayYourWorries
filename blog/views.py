@@ -12,4 +12,6 @@ def index(request):
 
 def post(request, slug):
     post = get_object_or_404(Post, slug=slug)
+    next_post = post.get_next_post()
+    previous_post = post.get_previous_post()
     return render(request, 'post.html', {'post':post})
