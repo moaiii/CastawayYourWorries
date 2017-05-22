@@ -3,22 +3,25 @@
     {% if request.path == '/' %}
         <nav class="nav nav--about" id="js-nav-container">
             <h4 class="nav__headline nav__headline--about" id="js-nav-open">About</h4>
+            <img class="nav__image--about" src="{{general.about_image.url}}" alt="Hello I'm Tom!">
             <p class="nav__text--about">
-                Vinyl maecenas et eget odio congue metus mustache orci nibh magna sapien mauris nec fixie proin bibendum. Porta nibh bibendum rutrum beard congue duis bibendum nibh ipsum metus bicycle rutrum ligula lorem congue in at vinyl. Massa morbi ipsum vivamus ipsum lorem biodiesel pharetra pharetra pellentesque maecenas justo sagittis you probably haven't heard of them quisque a pharetra et. Nibh porttitor noise-rock mattis maecenas porta cursus diam justo wire-rimmed glasses quisque justo at lectus sem ut organic rutrum. In tempus curabitur magna rutrum Austin undefined sem nec massa lectus orci craft beer massa odio curabitur bibendum.
+                {{general.about_text}}
             </p>
             <h4 class="nav__close--about" id="js-nav-close">close</h4>
         </nav>
     {% else %}
         <nav class="nav">
-            <a class="nav__arrow nav__arrow--left" href="{{post.get_previous_post.get_absolute_url}}">
-                {% svg 'back' %}
-            </a>
-            <a class="nav__headline" href="/">
-                <h4>Cast Away Your Worries</h4>
-            </a>
-            <a class="nav__arrow nav__arrow--right" href="{{post.get_next_post.get_absolute_url}}">
-                {% svg 'next' %}
-            </a>
+            <div class="nav__wrapper">
+                <a class="nav__arrow nav__arrow--left" href="{{post.get_previous_post.get_absolute_url}}">
+                    {% svg 'back' %}
+                </a>
+                <a class="nav__headline" href="/">
+                    <h4>Cast Away Your Worries</h4>
+                </a>
+                <a class="nav__arrow nav__arrow--right" href="{{post.get_next_post.get_absolute_url}}">
+                    {% svg 'next' %}
+                </a>
+            </div>
         </nav>
     {% endif %}
 </nav>

@@ -1,0 +1,32 @@
+a,
+p {
+    font-family: $font-regular;
+    line-height: 1.6;
+    color: $black;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-standout;
+  font-weight: normal;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+a, 
+p {
+    font-size: 1.1rem;
+}

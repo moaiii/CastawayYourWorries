@@ -1,0 +1,16 @@
+<div class="mailinglist">
+    <div class="mailinglist__container">
+        <form action="{% url 'polls:vote' question.id %}" method="post">
+            {% csrf_token %}
+            <div class="mailinglist__field">
+                <label class="mailinglist__label">{{ choice.choice_text }}</label>
+                <input class="mailinglist__input" type="text" name="field" value="First Name" />
+            </div>
+            <div class="mailinglist__field">
+                <label class="mailinglist__label">{{ choice.choice_text }}</label>
+                <input class="mailinglist__input" type="text" name="field" value="me@me.com" />
+            </div>
+            <input type="submit" value="Subscribe" />
+        </form>
+    </div>
+</div>

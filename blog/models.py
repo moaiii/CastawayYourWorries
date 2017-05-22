@@ -4,6 +4,16 @@ from django.conf import settings
 from django.db import models
 from django.urls import reverse
 
+
+class General(models.Model):
+    blog_name = models.CharField(db_index=True, max_length=255)
+    about_text = models.TextField()
+    about_image = models.FileField(null=True, blank=True)
+
+class Email(models.Model):
+    name = models.CharField(db_index=True, max_length=255)
+    email_address = models.EmailField(max_length=255)
+
 class Post(models.Model):
     title = models.CharField(db_index=True, max_length=255)
     slug = models.SlugField(unique=True, max_length=255)
